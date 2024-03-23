@@ -3,6 +3,7 @@ import 'package:testing/common/other/loading_elevated_button.dart';
 import 'package:testing/common/utils.dart';
 import 'package:testing/globals/appwrite.dart';
 import 'package:testing/home.dart';
+import 'package:testing/services/notification_service.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -16,6 +17,8 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     Appwrite.account.get().then((value) {
       navigatorPushUntil(context, const HomePage());
+    }).onError((error, stackTrace) {
+      showError(context, "Error While Logging in", error.toString());
     });
     super.initState();
   }
