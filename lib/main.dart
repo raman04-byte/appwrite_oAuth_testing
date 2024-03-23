@@ -28,11 +28,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// import 'package:appwrite/appwrite.dart';
-
-// Client client = Client();
-// client
-//     .setEndpoint('http://54.242.44.19/v1')
-//     .setProject('65f31e0dee7417a5dc36')
-//     .setSelfSigned(status: true); 
