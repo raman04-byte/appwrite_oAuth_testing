@@ -1,15 +1,8 @@
-import 'package:appwrite/appwrite.dart';
 import 'package:flutter/material.dart';
 import 'package:testing/login.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Client client = Client();
-  client
-      .setEndpoint('http://54.242.44.19/v1')
-      .setProject('65f31e0dee7417a5dc36')
-      .setSelfSigned(status: true);
-
   runApp(const MyApp());
 }
 
