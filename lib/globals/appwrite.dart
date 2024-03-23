@@ -3,8 +3,8 @@ import 'dart:typed_data';
 import 'package:appwrite/appwrite.dart';
 
 class Appwrite {
-  static const String endpoint = 'https://cloud.appwrite.io/v1';
-  static const String projectId = '65aaaaba8a8d08c15384';
+  static const String endpoint = 'http://54.242.44.19/v1';
+  static const String projectId = '65f31e0dee7417a5dc36';
 
   Appwrite._();
 
