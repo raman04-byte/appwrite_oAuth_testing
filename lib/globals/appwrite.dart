@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:appwrite/appwrite.dart';
+import 'package:appwrite/enums.dart';
 
 class Appwrite {
   static const String endpoint = 'http://54.242.44.19/v1';
@@ -41,5 +42,9 @@ class Appwrite {
         );
       }
     }
+  }
+
+  static Future<void> loginWithGitHub() async {
+    await Appwrite.account.createOAuth2Session(provider: OAuthProvider.github);
   }
 }

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:testing/common/other/loading_elevated_button.dart';
+import 'package:testing/globals/appwrite.dart';
+import 'package:testing/services/notification_service.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -16,8 +19,14 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: Column(
         children: [
-          ElevatedButton(
-              onPressed: () {}, child: const Text('Login with Github')),
+          LoadingElevatedButton(
+            onPressed: () async {
+              await Appwrite.loginWithGitHub();
+              showMsg(context, "Github Success ", 'Des');
+            },
+            icon: const Icon(Icons.abc),
+            label: const Text('Login with Github'),
+          ),
           ElevatedButton(
               onPressed: () {}, child: const Text('Login with Discord')),
           ElevatedButton(
