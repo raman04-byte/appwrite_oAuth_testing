@@ -14,8 +14,17 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: const Text('Login Page'),
       ),
-      body: const Center(
-        child: Text('Welcome to the Login Page!'),
+      body: Column(
+        children: [
+          ElevatedButton(
+              onPressed: () {}, child: const Text('Login with Github')),
+          ElevatedButton(
+              onPressed: () {}, child: const Text('Login with Discord')),
+          ElevatedButton(
+              onPressed: () {}, child: const Text('Login with FaceBook')),
+          ElevatedButton(
+              onPressed: () {}, child: const Text('Login with LinkedIn')),
+        ],
       ),
     );
   }
