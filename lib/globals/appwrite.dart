@@ -20,4 +20,8 @@ class Appwrite {
   static Future<void> loginWithGitHub() async {
     await Appwrite.account.createOAuth2Session(provider: OAuthProvider.github);
   }
+
+  static Future<void> loginWithDiscord() async {
+    await Appwrite.account.createOAuth2Session(provider: OAuthProvider.discord);
+  }
 }

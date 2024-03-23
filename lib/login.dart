@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:testing/common/other/loading_elevated_button.dart';
+import 'package:testing/common/utils.dart';
 import 'package:testing/globals/appwrite.dart';
+import 'package:testing/home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,6 +12,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  @override
+  void initState() {
+    Appwrite.account.get().then((value) {
+      navigatorPushUntil(context, const HomePage());
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +34,10 @@ class _LoginPageState extends State<LoginPage> {
               },
               child: const Text('Login with Github')),
           LoadingElevatedButton(
-            onPressed: () async {},
+            onPressed: () async {
+              await Appwrite.loginWithDiscord();
+              navigatorPush(context, const HomePage());
+            },
             label: const Text('Login with Discord'),
             icon: const Icon(Icons.login),
           ),
