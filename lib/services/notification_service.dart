@@ -9,6 +9,7 @@ void showMsg(BuildContext context, String title, String description) {
   description = description.sanitised;
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
+      backgroundColor: Colors.green,
       content: Column(
         children: [
           Text(title),

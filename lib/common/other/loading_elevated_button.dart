@@ -46,7 +46,7 @@ class _LoadingElevatedButtonState extends State<LoadingElevatedButton> {
                 log("Error: $e");
                 showError(
                   context,
-                  'error',
+                  'Error',
                   e.toString(),
                 );
                 if (widget.errorHandler != null) widget.errorHandler!(e);

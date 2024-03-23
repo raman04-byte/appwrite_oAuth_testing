@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testing/common/other/loading_elevated_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -18,12 +19,20 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           ElevatedButton(
               onPressed: () {}, child: const Text('Login with Github')),
-          ElevatedButton(
-              onPressed: () {}, child: const Text('Login with Discord')),
+          LoadingElevatedButton(
+            onPressed: () async {},
+            label: const Text('Login with Discord'),
+            icon: const Icon(Icons.login),
+          ),
           ElevatedButton(
               onPressed: () {}, child: const Text('Login with FaceBook')),
-          ElevatedButton(
-              onPressed: () {}, child: const Text('Login with LinkedIn')),
+          LoadingElevatedButton(
+            icon: const Icon(Icons.login),
+            onPressed: () async {
+              throw 'Linkedin ka toh nhi ho payega 😢';
+            },
+            label: const Text('Login with LinkedIn'),
+          ),
         ],
       ),
     );
