@@ -10,7 +10,8 @@ class Appwrite {
 
   static final client = Client()
     ..setEndpoint(endpoint)
-    ..setProject(projectId);
+    ..setProject(projectId)
+    ..setSelfSigned(status: true);
 
   static final account = Account(client);
   static final storage = Storage(client);
